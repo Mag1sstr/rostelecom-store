@@ -1,0 +1,31 @@
+.header {
+  position: relative;
+}
+.row {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.menu {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  color: inherit;
+  font-size: 24px;
+  font-weight: 500;
+  gap: 12px;
+}
+.links {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+.link {
+  cursor: pointer;
+}
