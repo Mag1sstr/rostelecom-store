@@ -1,0 +1,57 @@
+.menu {
+  visibility: hidden;
+  padding: 58px 0;
+  opacity: 0;
+  z-index: 100;
+  position: fixed;
+  inset: 0;
+  background-color: #101828;
+  transform: scale(0.9);
+  transition: 0.3s;
+}
+.menu::-webkit-scrollbar {
+  width: 8px;
+}
+.menu::-webkit-scrollbar-track {
+  background-color: #101828;
+}
+.menu::-webkit-scrollbar-thumb {
+  background-color: #9466ff;
+}
+.menu::-webkit-scrollbar-thumb:hover {
+  background-color: #70f;
+}
+.open {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+.close {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 40px;
+  right: 15px;
+  z-index: 100;
+  opacity: 1;
+  background-color: transparent;
+  &:hover::before {
+    transition: background-color 0.3s;
+    background-color: #9466ff;
+  }
+}
+.close::before {
+  background-color: #e8e9ea;
+  content: "";
+  height: 100%;
+  width: 100%;
+  left: 3px;
+  position: absolute;
+  top: 0;
+  -webkit-mask: url(../../../../images/close.svg) no-repeat 50% 50%;
+  mask: url(../../../../images/close.svg) no-repeat 50% 50%;
+}
+.lang {
+  display: flex;
+  gap: 24px;
+}
