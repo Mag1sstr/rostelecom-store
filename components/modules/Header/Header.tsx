@@ -9,9 +9,17 @@ import profileImg from "../../../images/header/profile.svg";
 import addImg from "../../../images/header/add.svg";
 import searchImg from "../../../images/header/search.svg";
 import Image from "next/image";
+import { useModals } from "@/hooks/useModals";
+import Menu from "./Menu/Menu";
 
 function Header() {
+  const { setOpenMenu, openMenu } = useModals();
   const { lang, t, setLang } = useLang();
+
+  console.log(openMenu);
+  const handleMenu = () => {
+    setOpenMenu((prev) => !prev);
+  };
 
   return (
     <header className={styles.header}>
@@ -20,9 +28,10 @@ function Header() {
           {/* <button onClick={() => setLang(lang === "ru" ? "en" : "ru")}>
           Switch
         </button> */}
-          <button className={styles.menu}>
+          <button onClick={handleMenu} className={styles.menu}>
             <Image src={burgerImg} alt="" /> {t[lang].header.menu__btn}
           </button>
+          <Menu />
           <div className={styles.logo}>
             <Logo />
           </div>
