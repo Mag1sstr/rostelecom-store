@@ -1,12 +1,15 @@
 import LanguageContextProvider from "@/contexts/LanguageContext";
 import Header from "../modules/Header/Header";
+import ModalsContextProvider from "@/contexts/ModalsContext";
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <LanguageContextProvider>
-        <Header />
-        {children}
+        <ModalsContextProvider>
+          <Header />
+          {children}
+        </ModalsContextProvider>
       </LanguageContextProvider>
     </>
   );
