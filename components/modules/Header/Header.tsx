@@ -13,10 +13,9 @@ import { useModals } from "@/hooks/useModals";
 import Menu from "./Menu/Menu";
 
 function Header() {
-  const { setOpenMenu, openMenu } = useModals();
-  const { lang, t, setLang } = useLang();
+  const { setOpenMenu } = useModals();
+  const { lang, t } = useLang();
 
-  console.log(openMenu);
   const handleMenu = () => {
     setOpenMenu((prev) => !prev);
   };
@@ -25,11 +24,8 @@ function Header() {
     <header className={styles.header}>
       <div className="container">
         <div className={styles.row}>
-          {/* <button onClick={() => setLang(lang === "ru" ? "en" : "ru")}>
-          Switch
-        </button> */}
           <button onClick={handleMenu} className={styles.menu}>
-            <Image src={burgerImg} alt="" /> {t[lang].header.menu__btn}
+            <Image src={burgerImg} alt="" /> {t[lang].header.menu_btn}
           </button>
           <Menu />
           <div className={styles.logo}>
