@@ -1,0 +1,24 @@
+.lang {
+  position: absolute;
+  top: 92px;
+  right: 15px;
+  display: flex;
+  gap: 24px;
+}
+.lang__btn {
+  font-size: 16px;
+  font-weight: 500;
+  background-color: transparent;
+  padding: 12px 24px;
+  border-radius: 32px;
+  border: 2px solid #565c66;
+  color: #a5a8ad;
+  &:hover {
+    border: 2px solid #9466ff;
+    color: #fff;
+  }
+}
+.active__lang {
+  color: #fff;
+  border: 2px solid #9466ff;
+}
