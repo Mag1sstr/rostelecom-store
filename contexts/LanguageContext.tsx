@@ -1,7 +1,7 @@
 "use client";
 import { createContext, useState } from "react";
 
-enum EnumLang {
+export enum EnumLang {
   RU = "ru",
   EN = "en",
 }
