@@ -64,7 +64,6 @@
 .links {
   display: inline-block;
   position: relative;
-  margin-top: 150px;
 }
 .link {
   font-size: 28px;
@@ -84,19 +83,20 @@
     }
   }
 }
-.links__drop {
-  opacity: 0;
-  visibility: hidden;
-  margin-top: 20px;
-  position: absolute;
-  left: 100%;
-  top: 0;
-  padding-left: 330px;
-  height: 100%;
-  transition: 0.3s;
+.row {
+  display: flex;
+  gap: 80px;
+  margin-top: 150px;
 }
-.drop {
-  visibility: visible;
-  opacity: 1;
-  margin-top: 0;
+.items {
+  padding-left: 255px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.catalog__img {
+  position: absolute;
+  left: 0;
+  top: 10px;
 }
