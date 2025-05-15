@@ -1,0 +1,28 @@
+.links__drop {
+  position: relative;
+  transition: 0.3s;
+
+  & > p {
+    color: #777c85;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+.hidden__links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  margin-left: 40px;
+  gap: 8px;
+}
+.link:hover {
+  color: #9466ff;
+}
+.links__drop.open {
+  & > p {
+    color: #fff;
+  }
+}
