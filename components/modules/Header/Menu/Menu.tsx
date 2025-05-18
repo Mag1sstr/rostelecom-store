@@ -2,10 +2,12 @@ import { useModals } from "@/hooks/useModals";
 import styles from "./Menu.module.css";
 import Logo from "@/components/elements/Logo/Logo";
 import { useLang } from "@/hooks/useLang";
-import backImg from "../../../../images/menu-background.png";
 import Image from "next/image";
 import { useState } from "react";
 import SwitchLanguage from "../SwitchLanguage/SwitchLanguage";
+import DropItems from "../DropItems/DropItems";
+import backImg from "../../../../images/menu-background.png";
+import lineImg from "../../../../images/menu/line.svg";
 
 function Menu() {
   const [showCatalogList, setShowCatalogList] = useState(false);
@@ -97,26 +99,39 @@ function Menu() {
           </div>
           <SwitchLanguage />
           <button className={styles.close} onClick={handleCloseMenu} />
-          <ul className={styles.links}>
-            <li className={styles.link}>
-              <button onMouseEnter={catalogHover}>
-                {t[lang].main_menu.catalog}
-                <div
-                  className={`${styles.links__drop} ${
-                    showCatalogList && styles.drop
-                  }`}
-                >
-                  <p>Одежда</p>
-                </div>
-              </button>
-            </li>
-            <li className={styles.link}>
-              <button>{t[lang].main_menu.buyers}</button>
-            </li>
-            <li className={styles.link}>
-              <button>{t[lang].main_menu.contacts}</button>
-            </li>
-          </ul>
+          <div className={styles.row}>
+            <ul className={styles.links}>
+              <li className={styles.link}>
+                <button onMouseEnter={catalogHover}>
+                  {t[lang].main_menu.catalog}
+                </button>
+              </li>
+              <li className={styles.link}>
+                <button>{t[lang].main_menu.buyers}</button>
+              </li>
+              <li className={styles.link}>
+                <button>{t[lang].main_menu.contacts}</button>
+              </li>
+            </ul>
+            {showCatalogList && (
+              <div className={styles.items}>
+                <Image className={styles.catalog__img} src={lineImg} alt="" />
+                <DropItems title={t[lang].main_menu.cloth} items={clothLinks} />
+                <DropItems
+                  title={t[lang].main_menu.accessories}
+                  items={accessoriesLinks}
+                />
+                <DropItems
+                  title={t[lang].main_menu.souvenirs}
+                  items={souvenirsLinks}
+                />
+                <DropItems
+                  title={t[lang].main_menu.office}
+                  items={officeLinks}
+                />
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </nav>
