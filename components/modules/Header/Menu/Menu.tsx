@@ -11,6 +11,8 @@ import lineImg from "../../../../images/menu/line.svg";
 
 function Menu() {
   const [showCatalogList, setShowCatalogList] = useState(false);
+  const [showBuyersList, setShowBuyersList] = useState(false);
+  const [showContactsList, setShowContactsList] = useState(false);
 
   const { openMenu, setOpenMenu } = useModals();
   const { lang, t } = useLang();
@@ -21,6 +23,8 @@ function Menu() {
 
   const catalogHover = () => {
     setShowCatalogList(true);
+    setShowBuyersList(false);
+    setShowContactsList(false);
   };
 
   const clothLinks = [
